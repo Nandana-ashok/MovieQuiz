@@ -1,0 +1,101 @@
+
+
+###
+GET http://127.0.0.1:8000/questions/
+Accept: application/json
+
+
+###
+POST http://127.0.0.1:8000/questions/
+Content-Type: application/json
+
+{
+    "title": "Who directed the movie Inception?",
+    "option_a": "Christopher Nolan",
+    "option_b": "Steven Spielberg",
+    "option_c": "James Cameron",
+    "option_d": "Quentin Tarantino",
+    "correct_option": "A",
+    "genre": "sci_fi",
+    "difficulty": "medium",
+    "explanation": "Christopher Nolan directed Inception.",
+    "marks": 2,
+    "is_active": true
+}
+
+
+###
+GET http://127.0.0.1:8000/questions/1/
+Accept: application/json
+
+
+###
+PUT http://127.0.0.1:8000/questions/1/
+Content-Type: application/json
+
+{
+    "title": "Who played Jack in Titanic?",
+    "option_a": "Tom Hanks",
+    "option_b": "Leonardo DiCaprio",
+    "option_c": "Brad Pitt",
+    "option_d": "Johnny Depp",
+    "correct_option": "B",
+    "genre": "drama",
+    "difficulty": "easy",
+    "explanation": "Leonardo DiCaprio played Jack Dawson.",
+    "marks": 1,
+    "is_active": true
+}
+
+
+###
+DELETE http://127.0.0.1:8000/questions/1/
+
+
+#  submissions
+
+###
+GET http://127.0.0.1:8000/submissions/
+Accept: application/json
+
+
+###
+POST http://127.0.0.1:8000/submissions/
+Content-Type: application/json
+
+{
+    "question_id": 2,
+    "selected_option": "A",
+    "owner": "nandana",
+    "remarks": "My answer"
+}
+
+
+###
+GET http://127.0.0.1:8000/submissions/1/
+Accept: application/json
+
+
+###
+PUT http://127.0.0.1:8000/submissions/1/
+Content-Type: application/json
+
+{
+    "question_id": 1,
+    "selected_option": "B",
+    "owner": "nandana",
+    "remarks": "Updated answer"
+}
+
+
+###
+DELETE http://127.0.0.1:8000/submissions/1/
+
+
+###
+PUT http://127.0.0.1:8000/submissions/1/evaluate/
+Content-Type: application/json
+
+{
+    "remarks": "Answer evaluated"
+}
